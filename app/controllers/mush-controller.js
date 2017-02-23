@@ -1,13 +1,14 @@
+"use strict";
+
 'use strict';
 
-var app = angular.module("MushroomApp", ["ngRoute"]);
+app.controller("MushroomCtrl", function($scope, MushroomStorage, FBCreds) {
 
-app.config(function($routeProvider) {
-  $routeProvider.
-  when('/', {
-    templateUrl: "/partial/mushroom.html",
-    controller: "MushroomCtrl"
+  MushroomStorage.getJSON()
+  .then(function(mushroomCollection) {
+    $scope.mushrooms = mushroomCollection;
   });
+
 });
 
 app.run(($location, FBCreds) => {

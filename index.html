@@ -4,8 +4,38 @@
 	<meta charset="UTF-8">
 	<title>Mushroom Mania</title>
 </head>
-<body>
+<body ng-app="MushroomApp">
+
+<div class="row">
+    <div class="col-xs-12 col-xs-offset-4">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText">
+      </div>
+    </div>
+ </div>
+<div class="row">
+    <div ng-controller="mush-controller" class="col-xs-4 col-xs-offset-4">
+      <label class="radio-inline">
+        <input type="radio" name="optradio" ng-model="" value="false">Poisonous
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="optradio" ng-model="" value="true">Non-Poisonous
+      </label>
+      <div ng-show></div>
+
+    </div>
+  </div>
 	
-	<script type="text/javascript" src="javascript/main.js"></script>
+
+	<script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>                                                                                                    <script type="text/javascript" src="lib/node_modules/angular/angular.min.js"></script>           
+    <script type="text/javascript" src="lib/node_modules/angular-route/angular-route.min.js"></script> <script type="text/javascript" src="lib/node_modules/firebase/firebase.js"></script> 
+
+	<script type="text/javascript" src="app.js"></script>
+
+	<script type="text/javascript" src="controllers/mush-controller.js"></script>
+
+	<script type="text/javascript" src="app/values/fb-creds.js"></script>
+
 </body>
 </html>
